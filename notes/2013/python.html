@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="../../stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="../../stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="../../stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="../../javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      });
+    </script>
+    <title>Minimal Python Notes</title>
+  </head>
+
+  <body>
+  <section style="padding-top:120px;padding-bottom:180px;padding-left:400px;padding-right:400px;">
+  <p> <em> As part of Python Month being celebrated by the Python India Community, I went to take a daylong session. These are reference notes for. 
+  The slides can be found <a href="http://bit.ly/16ZK7eT" target="_blank">here.</a> </em></p>
+  
+  <h3>The Python Interpreter</h3>
+<pre><code>&gt;&gt;&gt; 2+4
+&gt;&gt;&gt; 2/4
+&gt;&gt;&gt; 2.0/4
+&gt;&gt;&gt; 3 + 5
+&gt;&gt;&gt; 3+5
+&gt;&gt;&gt; x = 12 # x is a pointer to integer value 4
+&gt;&gt;&gt; print x - 2
+&gt;&gt;&gt; num_of_guys = 45
+&gt;&gt;&gt; num_of_gals = 20
+&gt;&gt;&gt; diff = num_of_guys - num_of_gals
+&gt;&gt;&gt; print "Hello World"
+</code></pre>
+<h3>Mathematical Operations</h3>
+<pre><code>&gt;&gt;&gt; 2 + 5 (Left to Right)
+&gt;&gt;&gt; 2 * 5 (Left to Right)
+&gt;&gt;&gt; 5%2 (Left to Right)
+&gt;&gt;&gt; 5 ** 2 (Right to Left)
+&gt;&gt;&gt; 2 + 5 * 5 % 2 ** 2 # PEDMAS holds true!
+</code></pre>
+<h3>Strings</h3>
+<pre><code>&gt;&gt;&gt; fname = "Rahul" # fname = 34
+&gt;&gt;&gt; print fname 
+&gt;&gt;&gt; lname = "Dravid"
+&gt;&gt;&gt; print lname
+&gt;&gt;&gt; print fname, lname
+&gt;&gt;&gt; print fname + lname # string concatenation
+&gt;&gt;&gt; print fname + " " + lname
+&gt;&gt;&gt; print "sachin" + 100 + 100
+&gt;&gt;&gt; 1 + "1"
+&gt;&gt;&gt; 'Hello' + "Sachin"
+&gt;&gt;&gt; 'Hello" + "Sachin"
+&gt;&gt;&gt; multi_line_string = """ this is a multiline string. 
+    this line contains more than one line"""
+&gt;&gt;&gt; len("Hello") # takes an argument - string, returns the number 
+&gt;&gt;&gt; help(len) # q to quit
+&gt;&gt;&gt; fname * 10
+&gt;&gt;&gt; dir() #protip
+</code></pre>
+<h3>Comparisons</h3>
+<pre><code>&gt;&gt;&gt; 1 == 1
+&gt;&gt;&gt; 1 = 1
+&gt;&gt;&gt; "a" == "a"
+&gt;&gt;&gt; "a" != "A"
+&gt;&gt;&gt; 1 &gt; 0
+&gt;&gt;&gt; 1 &lt; 0
+&gt;&gt;&gt; 2 &gt;= 3
+&gt;&gt;&gt; -1 &lt;= 0
+&gt;&gt;&gt; g in "aeiou"
+&gt;&gt;&gt; z not in "aeiou"
+&gt;&gt;&gt; x = 4 is *not* x == 4
+</code></pre>
+<h3>Conditionals</h3>
+<h3>If-elif-else</h3>
+<pre><code>&gt;&gt;&gt; x = 1k
+&gt;&gt;&gt; if x == 1:
+        print x
+    else:
+        print "not 1"
+    # observe 4 spaces, and a colon(:)     
+&gt;&gt;&gt; sisters_age = 20
+&gt;&gt;&gt; brothers_age = 23
+&gt;&gt;&gt; if sisters_age &lt; brothers_age:
+        print "sister is younger than brother"
+    elif sisters_age == brothers_age:
+        print "brother and sister are of same age"
+    else:
+        print "sister is older than brother"
+</code></pre>
+<h4>while</h4>
+<pre><code>&gt;&gt;&gt;count = 0
+&gt;&gt;&gt;while (count &lt; 9):
+      print 'The count is:', count
+      count = count + 1
+</code></pre>
+<h3>Looping with for</h3>
+<pre><code>&gt;&gt;&gt; for i in range(0, 10):
+        print i
+&gt;&gt;&gt; for i in xrange(0, 10):
+        print i
+</code></pre>
+<p>Calculate the factorial 0f 5.</p>
+<pre><code>&gt;&gt;&gt; facti = 1
+&gt;&gt;&gt; for i in xrange(1, 5):
+        facti *= i
+    print facti
+</code></pre>
+<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
+<p>Find the sum of all the multiples of 3 or 5 below 1000.    </p>
+<pre><code>&gt;&gt;&gt; sum = 0
+&gt;&gt;&gt; for i  in range(1, 1000):
+        if i % 3 == 0:
+        sum += i
+        elif i%5 == 0:
+           sum += i 
+    print sum
+&gt;&gt;&gt; for i in range(1, 1000);
+        if i%3 == 0 or i%5 == 0:
+            sum += i
+        print sum
+</code></pre>
+<h3>Functions &amp; Methods</h3>
+<pre><code>&gt;&gt;&gt; def volume(length, breadth, height)
+        return length*breadth*height
+</code></pre>
+<h4>Understanding Scope</h4>
+<pre><code>&gt;&gt;&gt; sum = 0
+&gt;&gt;&gt; def increment_x(i):
+        global sum
+        return sum + i
+&gt;&gt;&gt; for i in range(1, 1000):
+        if i%3 == 0 or i%5 == 0:
+            sum = increment_x(i)
+    print sum
+</code></pre>
+<h5><a href="http://www.pythontutor.com/visualize.html#code=sum+%3D+0%0Adef+increment<em>x(i)%3A%0A++++global+sum%0A++++return+sum+%2B+i%0A%0Afor+i+in+range(1,+20)%3A%0A++++if+i%253+%3D%3D+0+or+i%255+%3D%3D+0%3A%0A++++++++sum+%3D+increment</em>x(i)%0Aprint+sum++++++++&amp;mode=display&amp;cumulative=false&amp;heapPrimitives=false&amp;drawParentPointers=false&amp;textReferences=false&amp;showOnlyOutputs=false&amp;py=2&amp;curInstr=65">vizualize the flow of above code snippet, to better understand global and scope.  </a></h5>
+<h4>Methods</h4>
+<p>Methods in python are functions which belong to a class.
+eg. upper, istrcmp etc. </p>
+<h4>Lambda Operator</h4>
+<p>Lambda is a single expression.</p>
+<pre><code>&gt;&gt;&gt; sqr = lambda x: x ** 2
+&gt;&gt;&gt; print sqr(2)
+&gt;&gt;&gt; def sqr(x):
+       return x**2
+&gt;&gt;&gt; print sqr(2)
+&gt;&gt;&gt; sum = 0
+&gt;&gt;&gt; div_3_5 = lambda x : x%3==0 or  x%5==0
+&gt;&gt;&gt; for i in range(1, 1000):
+        if div_3_5(i):
+            sum += i
+&gt;&gt;&gt; print sum
+</code></pre>
+<h3>Lists</h3>
+<pre><code>In [1]: my_list = ["a", "b", "c", "d", "e"]
+In [2]: type(my_list)
+Out[2]: list
+In [3]: len(my_list)
+Out[3]: 5
+In [4]: help(my_list)
+In [5]: my_list[0:len(my_list)+1:2]
+Out[5]: ['a', 'c', 'e']
+In [6]: my_list[::-1]
+Out[6]: ['e', 'd', 'c', 'b', 'a']
+In [7]: my_list[-1]
+Out[7]: 'e'
+In [10]: your_list =[23.35, 889, "apple"]
+In [11]: "apple" in your_list
+Out[11]: True
+In [15]: his_list = ["gamebit07", "tamebig07", "bitgame07"]
+In [17]: his_list
+Out[17]: ['gamebit07', 'tamebig07', 'bitgame07']
+In [18]: his_list.sort()
+In [19]: his_list
+Out[19]: ['bitgame07', 'gamebit07', 'tamebig07']
+In [20]: his_list.append("skate")
+In [21]: his_list
+Out[21]: ['bitgame07', 'gamebit07', 'tamebig07', 'skate']
+In [22]: for nick in his_list:
+....:     print nick
+....:     
+bitgame07
+gamebit07
+tamebig07
+skate
+</code></pre>
+<h4>List Comprehension</h4>
+<pre><code>In [23]: a = [nick[0] for nick in his_list ]
+In [24]: a
+Out[24]: ['b', 'g', 't', 's']
+In [31]: a = range(10)
+In [32]: a
+Out[32]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+In [33]: [x*x for x in a]
+Out[33]: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+In [34]  div_3_5 = lambda x : x%3==0 or  x%5==0
+In [35]: sum([el for el in range(0, 1000) if div_3_5(el)])
+</code></pre>
+<h3>String</h3>
+<pre><code>In [34]: a = "hello-world"
+In [35]: type(a)
+Out[35]: str
+In [36]: help(a)
+no Python documentation found for 'hello-world'
+In [37]: help(type(a))
+In [38]: a[-1]
+Out[38]: 'd'
+In [39]: a[0]
+Out[39]: 'h'
+In [40]: a[::-1]
+Out[40]: 'dlrow-olleh'
+In [41]: b = a.split("-")
+In [42]: b
+Out[42]: ['hello', 'world']
+In [47]: c = " ".join(b)
+In [48]: c
+Out[48]: 'hello world'
+</code></pre>
+<p>Remove vowels from a sentence.</p>
+<pre><code>In [64]: sentence = "This is a random sentence, becuase the quick brown fox, jumped over the lazy cat."
+In [65]: chk_vowel = lambda x : x in "aeiou"
+In [66]: res = "".join([char for char in sentence if not chk_vowel(char)])
+In [67]: res
+Out[67]: 'Ths s  rndm sntnc, bcs th qck brwn fx, jmpd vr th lzy ct.'
+</code></pre>
+<h3>Dicts</h3>
+<p>Key Value Pairs</p>
+<pre><code>In [68]: my_dict = {'name':'Sachin', 'century':100, 'sports':'cricket', 'son':"Arjun"}
+In [69]: type(my_dict)
+Out[69]: dict
+In [70]: help(type(my_dict))
+In [71]: my_dict.
+my_dict.clear       my_dict.get         my_dict.iteritems
+my_dict.keys        my_dict.setdefault  my_dict.viewitems   
+my_dict.copy        my_dict.has_key     my_dict.iterkeys
+my_dict.pop         my_dict.update      my_dict.viewkeys    
+my_dict.fromkeys    my_dict.items       my_dict.itervalues
+my_dict.popitem     my_dict.values      my_dict.viewvalues
+</code></pre>
+<h4>Tuples are immutable lists!</h4>
+<h3>os module</h3>
+<pre><code>import os
+print 'Initial value:', os.environ.get('TESTVAR', None)
+print 'Child process:'
+os.system('echo $TESTVAR')
+os.environ['TESTVAR'] = 'THIS VALUE WAS CHANGED'
+print
+print 'Changed value:', os.environ['TESTVAR']
+print 'Child process:' 
+os.system('echo $TESTVAR')
+del os.environ['TESTVAR']
+print
+print 'Removed value:', os.environ.get('TESTVAR', None)
+print 'Child process:' 
+os.system('echo $TESTVAR')
+</code></pre>
+<h3>time module</h3>
+<pre><code>import datetime
+t = datetime.time(1, 2, 3)
+print t
+print 'hour  :', t.hour
+print 'minute:', t.minute
+print 'second:', t.second
+print 'microsecond:', t.microsecond
+print 'tzinfo:', t.tzinfo
+</code></pre>
+<h3>Classes in Python</h3>
+<pre><code>class Shape:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+    description = "This shape has not been described yet"
+    author = "Nobody has claimed to make this shape yet"
+    def area(self):
+        return self.x * self.y
+    def perimeter(self):
+        return 2 * self.x + 2 * self.y
+    def describe(self,text):
+        self.description = text
+    def authorName(self,text):
+        self.author = text
+    def scaleSize(self,scale):
+        self.x = self.x * scale
+        self.y = self.y * scale
+</code></pre>
+  <div style="padding-top:80px;" id="disqus_thread"></div>
+  <h2>PasteRight Skate Hunbash 2013</a></h2>
+  </section>
+  </body>
+  
+  
+ 
+ 
+<script type="text/javascript">
+var disqus_shortname = 'effin';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    try {
+          var pageTracker = _gat._getTracker("UA-41597540-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
+</script>
+<script type="text/javascript">stLight.options({publisher: "ur-73d2de09-363e-6ea7-6cce-9a4e7082ac22", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script>
+var options={ "publisher": "ur-73d2de09-363e-6ea7-6cce-9a4e7082ac22", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "googleplus", "pinterest", "tumblr", "reddit", "evernote", "linkedin", "email"]}};
+var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script>
+</body>
+</html>

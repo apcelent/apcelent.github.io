@@ -25,7 +25,7 @@
 
   <body>
   <section style="padding-top:120px;padding-bottom:180px;padding-left:400px;padding-right:400px;">
-  <p> <em> As part of Python Month being celebrated by the Python India Community, I went to take a daylong session. These are reference notes for. 
+  <p> <em> As part of Python Month being celebrated by the Python India Community, I went to take a daylong session. These are complementary notes. 
   The slides can be found <a href="http://bit.ly/16ZK7eT" target="_blank">here.</a> </em></p>
   
   <h3>The Python Interpreter</h3>
@@ -143,7 +143,7 @@
             sum = increment_x(i)
     print sum
 </code></pre>
-<h5><a href="http://www.pythontutor.com/visualize.html#code=sum+%3D+0%0Adef+increment<em>x(i)%3A%0A++++global+sum%0A++++return+sum+%2B+i%0A%0Afor+i+in+range(1,+20)%3A%0A++++if+i%253+%3D%3D+0+or+i%255+%3D%3D+0%3A%0A++++++++sum+%3D+increment</em>x(i)%0Aprint+sum++++++++&amp;mode=display&amp;cumulative=false&amp;heapPrimitives=false&amp;drawParentPointers=false&amp;textReferences=false&amp;showOnlyOutputs=false&amp;py=2&amp;curInstr=65">vizualize the flow of above code snippet, to better understand global and scope.  </a></h5>
+<h5><a href="http://www.pythontutor.com/visualize.html#code=sum+%3D+0%0Adef+increment_x(i)%3A%0A++++global+sum%0A++++return+sum+%2B+i%0A%0Afor+i+in+range(1,+20)%3A%0A++++if+i%253+%3D%3D+0+or+i%255+%3D%3D+0%3A%0A++++++++sum+%3D+increment_x(i)%0Aprint+sum++++++++&amp;mode=display&amp;cumulative=false&amp;heapPrimitives=false&amp;drawParentPointers=false&amp;textReferences=false&amp;showOnlyOutputs=false&amp;py=2&amp;curInstr=65">vizualize the flow of above code snippet, to better understand global and scope.  </a></h5>
 <h4>Methods</h4>
 <p>Methods in python are functions which belong to a class.
 eg. upper, istrcmp etc. </p>
@@ -298,9 +298,6 @@ print 'tzinfo:', t.tzinfo
   </section>
   </body>
   
-  
- 
- 
 <script type="text/javascript">
 var disqus_shortname = 'effin';
 
